@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   before_action :find_project
-  before_action :find_task, expect: [:create]
+  before_action :find_task, except: [:create]
 
   def create
     @task = @project.tasks.create(task_params)
