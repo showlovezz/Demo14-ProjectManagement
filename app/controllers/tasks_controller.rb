@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
 
   before_action :find_project
+  before_action :find_task, expect: [:create]
 
   def create
     @task = @project.tasks.create(task_params)
@@ -8,7 +9,6 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = @project.tasks.find(params[:id])
     if @task.destroy
       flash[:success] = "小任務被刪除了"
     else
@@ -17,7 +17,17 @@ class TasksController < ApplicationController
     redirect_to @project
   end
 
+  def complete
+    @task.update_attribute(:completed_at, Time.now)
+    redirect_to @project, notice: "Task Completed"
+  end
+
+
   private
+
+  def find_task
+    @task = @project.tasks.find(params[:id])
+  end
 
   def find_project
     @project = Project.find(params[:project_id])
