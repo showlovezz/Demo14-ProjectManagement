@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 
-  before_action :find_project, only: [:show, :edit, :update]
+  before_action :find_project, only: [:show, :edit, :update, :destroy]
 
   def index
   	@projects = Project.all
@@ -34,6 +34,12 @@ class ProjectsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @project.destroy
+    flash[:alert] = "此專案被刪除了"
+    redirect_to projects_path
   end
 
   private
