@@ -2,4 +2,11 @@
 
 <p><%= @project.description %></p>
 
+<div><%= render @project.tasks %></div>
+
+<div><%#= render "tasks/task" %></div>
+
+
+<div><%= render "tasks/form2" %></div>
+
 <%= link_to 'Back to index', projects_path %>

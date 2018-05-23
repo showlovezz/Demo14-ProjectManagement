@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-  	@project = Project.new(params_project)
+  	@project = Project.new(project_params)
   	if @project.save
   		flash[:notice] = "建立成功"
   		redirect_to projects_path
@@ -28,7 +28,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    if @project.update(params_project)
+    if @project.update(project_params)
       flash[:notice] = "修改此內容成功"
       redirect_to projects_path
     else
@@ -44,7 +44,7 @@ class ProjectsController < ApplicationController
 
   private
 
-  def params_project
+  def project_params
   	params.require(:project).permit(:title, :description)
   end
 
