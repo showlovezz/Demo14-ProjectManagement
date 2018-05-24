@@ -1,10 +1,9 @@
 //Basic seting
 body {
-  background-image: image-url('coffee.jpeg');
+  background-color: #213D42;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
 }
 * {
   font-family: "Noto Serif", serif;
@@ -28,6 +27,11 @@ body {
 .nav-link:hover {
   color: whitesmoke!important;
 }
+.col-siz {
+  color: #F15025!important;
+  font-size: 20px;
+  margin-top: 20px;
+}
 
 //project/index seting
 .og {
@@ -40,10 +44,15 @@ body {
   font-size: 26px;
 }
 .card {
-  margin-top: 20px;
+  margin: 25px;
 }
 
 //Form Seting
 .form-group h2 {
   color: #FF7E6B!important;
+}
+
+//Show page Seting
+.inline {
+  display: inline-block;
 }

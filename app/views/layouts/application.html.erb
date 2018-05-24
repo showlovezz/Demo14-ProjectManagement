@@ -30,9 +30,17 @@
       </div>
     </nav>
 
-  	<p><%= notice %></p>
-  	<p><%= alert %></p>
-  	
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+        	<p class="col-siz text-center">
+            <%= notice %>
+            <%= alert %>
+          </p>
+        </div>
+      </div>
+    </div>
+
     <%= yield %>
   </body>
 </html>

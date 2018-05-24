@@ -1,4 +1,13 @@
 <%= form_for ([@project, @project.tasks.build]) do |f| %>
-  <%= f.text_field :content, placeholder: "New Task" %>
-  <%= f.submit %>
+  <div class="form-group row mt-4 mb-2">
+    <div class="col-md-2">
+      <h5 class="font-weight-bold col-form-label"><%= f.label :task, "New Tasks：" %></h5>
+    </div>
+    <div class="col-md-8">
+      <%= f.text_field :content, placeholder: "請輸入 New Task", class: "form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= f.submit class: "btn-block btn btn-warning" %>
+    </div>
+  </div>
 <% end %>

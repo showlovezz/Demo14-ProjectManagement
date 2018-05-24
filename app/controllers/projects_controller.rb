@@ -37,9 +37,12 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project.destroy
-    flash[:alert] = "此專案被刪除了"
-    redirect_to projects_path
+    if @project.destroy
+      flash[:alert] = "此專案被刪除了"
+    else
+      flash[:alert] = "此專案內容有個別專案，請先完成再刪除。"
+    end
+      redirect_to projects_path
   end
 
   private
