@@ -18,6 +18,10 @@ body {
 	color: #F15025!important;
   font-size: 24px;
 }
+.nav-link {
+  font-size: 16px;
+  margin-top: 5px;
+} 
 .navbar-brand:hover {
   color: whitesmoke!important;
 }
@@ -37,4 +41,9 @@ body {
 }
 .card {
   margin-top: 20px;
+}
+
+//Form Seting
+.form-group h2 {
+  color: #FF7E6B!important;
 }

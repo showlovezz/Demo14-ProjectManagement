@@ -1,11 +1,40 @@
-<%= form_for @project do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
 
-  <%= f.label :title, "Title" %>
-	<%= f.text_field :title %>
+      <div class="mt-5">
+        <%= form_for @project do |f| %>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3">
+                <h2 class="font-weight-bold"><%= f.label :title, "Title：" %></h2>
+              </div>
+              <div class="col-md-9">
+                <%= f.text_field :title, class: "form-control form-control-lg", placeholder: "請輸入專案名稱" %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3">
+                <h2 class="font-weight-bold"><%= f.label :description, "Description：" %></h2>
+              </div>
+              <div class="col-md-9">
+                <%= f.text_area :description, class: "form-control", rows: "10", placeholder: "請輸入此專案敘述" %>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3 offset-md-9">
+                <%= f.submit class: "btn-lg btn-block btn btn-warning" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    
+    </div>
+  </div>
+</div>
 
-	<%= f.label :description, "Description" %>
-	<%= f.text_area :description %>
-
-	<%= f.submit %>
-
-<% end %>
