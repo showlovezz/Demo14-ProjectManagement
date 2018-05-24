@@ -1,0 +1,40 @@
+//Basic seting
+body {
+  background-image: image-url('coffee.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+* {
+  font-family: "Noto Serif", serif;
+}
+
+//Navbar seting
+.transparent {
+  background: rgba(0,0,0,0.5);
+}
+.navbar-brand, .nav-link {
+	color: #F15025!important;
+  font-size: 24px;
+}
+.navbar-brand:hover {
+  color: whitesmoke!important;
+}
+.nav-link:hover {
+  color: whitesmoke!important;
+}
+
+//project/index seting
+.og {
+  color: #FF7E6B!important;
+}
+.badge {
+  margin-right: 10px;
+}
+.lead {
+  font-size: 26px;
+}
+.card {
+  margin-top: 20px;
+}

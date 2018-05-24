@@ -1,14 +1,29 @@
-<h1>This is Project.</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
 
-<% @projects.each do |project| %>
-  <ul>
-    <li>
-      <%= project.title %>
-      <%= project.description %>
-      <%= link_to 'Show', project_path(project) %>
-      <%= link_to 'Edit', edit_project_path(project) %>
-      <%= link_to 'Delete', project_path(project), method: :delete, data: { confirm: "Are you sure?" } %>
-    </li>
-  </ul>
-<% end %>
-<%= link_to 'Create Project', new_project_path %>
+      <div class="project-center">
+        <% @projects.each do |project| %>
+          <div class="card">
+            <div class="card-header">
+              <h2 class="og"><%= project.title %></h2>
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <p class="lead"><%= project.description %></p>
+                <footer class="blockquote-footer">
+                  <%= link_to 'Show', project_path(project), class: "badge badge-primary" %>
+                  <%= link_to 'Edit', edit_project_path(project), class: "badge badge-success" %>
+                  <%= link_to 'Delete', project_path(project), class: "badge badge-danger", method: :delete, data: { confirm: "Are you sure?" } %>
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
